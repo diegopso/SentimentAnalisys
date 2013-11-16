@@ -20,7 +20,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println(classify("Alessandra, gostaria de lhe parabenizar pela coragem e sinceridade que usou para desnudar esse turbilhao de afetos..."));
+        //train();
+        System.out.println(classify("muito interessante me ajudou muito no meu trabalho"));
     }
     
     public static void train(){

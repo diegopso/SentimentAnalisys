@@ -139,3 +139,7 @@ Now you will be able to query the Twitter API and classify the retrieved tweets 
 More Information
 ======================
 http://cavajohn.blogspot.com.br/2013/05/how-to-sentiment-analysis-of-tweets.html
+
+Examples
+======================
+In the main file there is methods two methods to exemplification. The data used are comments from http://ulbra-to.br/encena/2013/09/23/Memorias-de-uma-mente-esquizofrenica.
