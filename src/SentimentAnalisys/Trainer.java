@@ -12,12 +12,27 @@ import java.io.File;
 import java.io.IOException;
 
 public class Trainer {
+    private String charset;
+    private String trainDirectory;
+    private String outFile;
 
-    void train() throws IOException, ClassNotFoundException {
+    public Trainer() {
+        charset = Config.charset;
+        trainDirectory = Config.trainDirectory;
+        outFile = Config.classifierPath;
+    }
+
+    public Trainer(String charset, String trainDirectory, String outFile) {
+        this.charset = charset;
+        this.trainDirectory = trainDirectory;
+        this.outFile = outFile;
+    }
+
+    public void Train() throws IOException, ClassNotFoundException {
         File trainDir;
         String[] categories;
         LMClassifier clazz;
-        trainDir = new File("trainDirectory");
+        trainDir = new File(this.trainDirectory);
         categories = trainDir.list();
         int nGram = 7; //the nGram level, any value between 7 and 12 works
         clazz = DynamicLMClassifier.createNGramProcess(categories, nGram);
@@ -29,11 +44,11 @@ public class Trainer {
             File[] trainFiles = file.listFiles();
             for (int j = 0; j < trainFiles.length; ++j) {
                 File trainFile = trainFiles[j];
-                String review = Files.readFromFile(trainFile, "ISO-8859-1");
+                String review = Files.readFromFile(trainFile, this.charset);
                 Classified classified = new Classified(review, classification);
                 ((ObjectHandler) clazz).handle(classified);
             }
         }
-        AbstractExternalizable.compileTo((Compilable) clazz, new File("classifier.txt"));
+        AbstractExternalizable.compileTo((Compilable) clazz, new File(this.outFile));
     }
 }

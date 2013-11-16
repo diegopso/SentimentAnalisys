@@ -13,7 +13,7 @@ public class SentimentClassifier {
 
     public SentimentClassifier() {
         try {
-            clazz = (LMClassifier) AbstractExternalizable.readObject(new File("abc.txt"));
+            clazz = (LMClassifier) AbstractExternalizable.readObject(new File(Config.classifierPath));
             categories = clazz.categories();
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
