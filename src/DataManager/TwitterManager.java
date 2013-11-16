@@ -11,6 +11,11 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
+/**
+ *
+ * @author johnbyron <https://github.com/johnbyron>
+ * @author diegopso <https://github.com/diegopso>
+ */
 public class TwitterManager {
 
     SentimentClassifier sentClassifier;

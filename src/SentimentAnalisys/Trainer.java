@@ -11,6 +11,11 @@ import com.aliasi.util.Files;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *
+ * @author johnbyron <https://github.com/johnbyron>
+ * @author diegopso <https://github.com/diegopso>
+ */
 public class Trainer {
     private String charset;
     private String trainDirectory;

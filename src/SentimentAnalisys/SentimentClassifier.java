@@ -6,6 +6,11 @@ import com.aliasi.util.AbstractExternalizable;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ *
+ * @author johnbyron <https://github.com/johnbyron>
+ * @author diegopso <https://github.com/diegopso>
+ */
 public class SentimentClassifier {
 
     String[] categories;
